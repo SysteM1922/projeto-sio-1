@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="body_1" width="72" height="72">
+
+<g transform="matrix(1.5 0 0 1.5 0 0)">
+    <path transform="matrix(-4.3711392E-08 -1 1 -4.3711392E-08 -15 63)"  d="M18 34L30 34L30 44L18 44z" stroke="none" fill="#A6C7FF" fill-rule="nonzero" />
+    <path d="M40 48L8 48C 6.3431454 48 5 46.656853 5 45L5 45L5 13C 5 11.343145 6.3431454 10 8 10L8 10L15 10L15 14L9 14L9 44L39 44L39 14L33 14L33 10L40 10C 41.656853 10 43 11.343145 43 13L43 13L43 45C 43 46.656853 41.656853 48 40 48z" stroke="none" fill="#2161FF" fill-rule="nonzero" />
+    <path transform="matrix(-4.3711392E-08 -1 1 -4.3711392E-08 13 35)"  d="M22 6L26 6L26 16L22 16z" stroke="none" fill="#A6C7FF" fill-rule="nonzero" />
+    <path transform="matrix(-1 8.742278E-08 -8.742278E-08 -1 48 22)"  d="M22 6L26 6L26 16L22 16z" stroke="none" fill="#A6C7FF" fill-rule="nonzero" />
+    <path d="M32 22L16 22C 14.343145 22 13 20.656855 13 19L13 19L13 3C 13 1.3431456 14.343145 0 16 0L16 0L32 0C 33.656853 0 35 1.3431456 35 3L35 3L35 19C 35 20.656855 33.656853 22 32 22zM17 18L31 18L31 4L17 4L17 18z" stroke="none" fill="#2161FF" fill-rule="nonzero" />
+    <path d="M0 0L48 0L48 48L0 48z" stroke="none" fill="none" />
+</g>
+</svg>

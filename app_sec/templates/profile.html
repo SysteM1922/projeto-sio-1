@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <body>
+    {%  include "navbar.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1>Profile</h1>
+            </div>
+            <div class="col-md-2 flex-row gap-1">
+                <a href="/edit_profile" class="btn btn-danger">Edit Profile</a>
+            </div>
+
+            <div class="col-12">
+                <span class="fw-bold">Name: </span>
+                <span>{{ user.name }}</span>
+            </div>
+            <div class="col-12">
+                <span class="fw-bold">SSN: </span>
+                <span>{{ user.SSN }}</span>
+            </div>
+            <div class="col-12">
+                <span class="fw-bold">Address: </span>
+                <span>{{ user.morada }}</span>
+            </div>
+            <div class="col-12">
+                <span class="fw-bold">Contact: </span>
+                <span>{{ user.contact }}</span>
+            </div>
+            <div class="col-12">
+                <span class="fw-bold">Email: </span>
+                <span>{{ user.email }}</span>
+            </div>
+            <div class="col-12">
+                <span class="fw-bold">Image: </span>
+                <img src="{{ url_for('static', filename='pictures/'+user.image)}}" alt="profile image" width="100px" height="100px">
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+{%  block scripts %}
+    <script src="{{ url_for('static',filename='/js/search.js')}}"></script>
+{% endblock %}

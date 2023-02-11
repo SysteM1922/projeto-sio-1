@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+{% endblock %}
+
+{% block container %}
+<body style="background-image: url({{ url_for('static',filename='assets/img/header-bg.jpg')}}); background-position: center;">
+<!-- logo on upper right corner-->
+<div style=" position:absolute fixed top; padding-left: 5rem; padding-top: 3rem;" class="logo">
+    <a href="/"><img style="max-width: 5%;  height: auto;"
+                              src="{{ url_for('static',filename='assets/img/logo-solo.png') }}" alt="logo"></a>
+</div>
+<!-- login form -->
+<div class="row">
+    <div class="loginBox" style="z-index: 10;">
+        <img class="user" src="{{ url_for('static',filename='assets/img/login-icon.png') }}" height="100px" width="100px">
+        <h3>Login</h3>
+        <form action="/login" method="post">
+            <div class="inputBox">
+                <!--Show Flashed Messages-->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <input id="email" type="text" name="email" placeholder="Email">
+                <input id="pass" type="password" name="password" placeholder="Password">
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+</body>
+{% endblock %}

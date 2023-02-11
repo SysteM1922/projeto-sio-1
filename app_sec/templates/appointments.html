@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <body>
+    {%  include "navbar.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Appointments</h1>
+                <a href="/appointment" class="btn btn-primary">Add Appointment</a>
+                <hr>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for appointment in appointments %}
+                        <tr>
+                            <td>{{ appointment.subject }}</td>
+                            <td>{{ appointment.description }}</td>
+                            <td>{{ appointment.date }}</td>
+                            <td>{{ appointment.time }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <button id="loadbutton" class="btn btn-primary btn-block">Load More</button>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        var page = 1;
+        $("#loadbutton").click(function () {
+            page++;
+            $.ajax({
+                url: "/api/appointments?page=" + page,
+                type: "GET",
+                success: function (data) {
+                    var appointments = data;
+                    var selector = $("tbody");
+                    for (var i = 0; i < appointments.length; i++) {
+                        selector.append("<tr>");
+                        selector.append($("<td></td>").text(appointments[i].subject));
+                        selector.append($("<td></td>").text(appointments[i].description));
+                        selector.append($("<td></td>").text(appointments[i].date));
+                        selector.append($("<td></td>").text(appointments[i].time));
+                        selector.append("</tr>");
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

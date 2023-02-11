@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/styles.css') }}">
+{% endblock %}
+{% block container %}
+
+<body style="background-image: url({{ url_for('static',filename='assets/img/header-bg.jpg')}}); background-size: 50% auto;">
+    <div style=" position:absolute; padding-left: 5rem; padding-top: 3rem;" class="logo">
+        <a href="/"><img style="max-width: 5%;  height: auto;"
+                                  src="{{ url_for('static',filename='assets/img/logo-solo.png') }}" alt="logo"></a>
+    </div>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-10">
+                </div>
+            </div>
+            <div class="row justify-content-center" style="opacity: 95%;">
+                <div class="col-md-12 textcolour">
+                    <div class="wrapper">
+                        <div class="row no-gutters">
+                            <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 class="mb-4 textcolour">Get in touch</h3>
+                                    <div id="form-message-warning" class="mb-4"></div>
+                                    <div id="form-message-success" class="mb-4">
+                                        Your message was sent, thank you!
+                                    </div>
+                                    <form method="POST" action="/contact" id="contactForm" name="contactForm" class="contactForm">
+                                                <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label textcolour" for="name">Full Name</label>
+                                                    <input type="text" class="form-control textcolour" name="name" id="name"
+                                                        placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label textcolour" for="email">Email Address</label>
+                                                    <input type="email" class="form-control textcolour" name="email" id="email"
+                                                        placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label textcolour" for="subject">Subject</label>
+                                                    <input type="text" class="form-control textcolour" name="subject" id="subject"
+                                                        placeholder="Subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label textcolour" for="message">Message</label>
+                                                    <textarea name="message" class="form-control textcolour" id="message" cols="30"
+                                                        rows="4" placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Send Message" class="btn btn-primary " style="background-color: #0baccc !important;">
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-5 d-flex align-items-stretch">
+                                <div class="info-wrap bg-primary w-100 p-md-5 p-4" style="background-color: #0baccc !important; border-color: #0baccc !important;">
+                                    <h3>Let's get in touch</h3>
+                                    <p class="mb-4">Send us a message about anything! Make sure to check out our main page before asking stupid questions, though!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}
+{% block scripts %}
+{#<script src="{{ url_for('static',filename='/js/main.js') }}"></script>#}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block container %}
+<body>
+    {%  include "navbar.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Contacts</h1>
+                <hr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contact in contacts %}
+                        <tr>
+                            <td>{{ contact.name }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.message }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
